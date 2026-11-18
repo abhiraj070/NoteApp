@@ -4,6 +4,19 @@ Next.js App Router + React + TypeScript. The backend owns authentication and
 note permissions. The frontend keeps tokens in HttpOnly cookies and never in
 local storage. `/api` requests are proxied to FastAPI through Next.js.
 
+## Deploy on Vercel
+
+Import `abhiraj070/NoteApp` from branch `main` and select the repository root.
+The root `vercel.json` explicitly defines the `frontend` Next.js service and
+routes requests to it. This avoids auto-detecting the Python apps at the
+repository root and in `backend` as the frontend deployment.
+
+Add `BACKEND_URL` in Vercel's environment variables with the deployed FastAPI
+HTTPS origin (without `/api`). The backend must be hosted separately. Add the
+Vercel frontend origin to the backend's `ALLOWED_ORIGINS` and use
+`COOKIE_SECURE=true` on the backend. Redeploy after changing `BACKEND_URL`.
+Do not use localhost as the backend URL in a hosted deployment.
+
 ## Run locally
 
 From the project root, start FastAPI in one terminal:
