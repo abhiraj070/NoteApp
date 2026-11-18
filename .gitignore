@@ -25,3 +25,10 @@ htmlcov/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Next.js frontend
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+npm-debug.log*

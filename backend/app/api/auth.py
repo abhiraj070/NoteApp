@@ -10,7 +10,6 @@ from .security import (clear_cookies, decode_token, hash_password, new_tokens,
 
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
-# Reduce username-based timing differences for unsuccessful login attempts.
 DUMMY_PASSWORD_HASH = hash_password("unused-dummy-password")
 
 
