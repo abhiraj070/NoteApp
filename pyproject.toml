@@ -2,4 +2,15 @@
 name = "noteapp"
 version = "0.1.0"
 requires-python = ">=3.7"
-dependencies = []
+dependencies = [
+    "fastapi==0.103.2",
+    "uvicorn==0.22.0",
+    "sqlalchemy==2.0.58",
+    "psycopg2-binary==2.9.9",
+    "alembic==1.12.1",
+    "python-jose==3.4.0",
+    "python-dotenv==0.21.1",
+]
+
+[project.optional-dependencies]
+dev = ["httpx==0.24.1"]
